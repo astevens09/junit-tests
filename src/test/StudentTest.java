@@ -14,6 +14,13 @@ public class StudentTest {
 
     Student test = new Student(id,name);
 
+    @Before
+    public void setUp(){
+        test.addGrade(99);
+        test.addGrade(100);
+        test.addGrade(60);
+    }
+
     @Test
     public void constructorTest(){
 
@@ -43,9 +50,6 @@ public class StudentTest {
 
     @Test
     public void getGradesTest(){
-        test.addGrade(99);
-        test.addGrade(100);
-        test.addGrade(60);
 
         List<Integer> list = Arrays.asList(99,100,60);
 
@@ -56,9 +60,6 @@ public class StudentTest {
 
     @Test
     public void getGradeAverageTest(){
-        test.addGrade(99);
-        test.addGrade(100);
-        test.addGrade(60);
 
         double average = (double)(99+100+60)/3;
 
